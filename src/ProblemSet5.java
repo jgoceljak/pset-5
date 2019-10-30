@@ -25,6 +25,7 @@ public class ProblemSet5 {
 
       System.out.println(ps.surroundMe("boomer", "baby"));
       System.out.println(ps.endsMeet("babyboomer", 2));
+      System.out.println(ps.middleMan("lambo"));
 
     }
 
@@ -79,7 +80,15 @@ public class ProblemSet5 {
      */
 
     public String middleMan(String text) {
-      return "1";
+      if (text != null && (text.length() % 2) != 0){
+        int length = text.length();
+        String output = text.substring((length/2)-1, (length/2)+2);
+        return output;
+      } else if(text == null){
+        return null;
+      } else{
+      return text;
+    }
     }
 
     /*
