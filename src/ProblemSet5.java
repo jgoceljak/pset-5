@@ -26,6 +26,7 @@ public class ProblemSet5 {
       System.out.println(ps.surroundMe("boomer", "baby"));
       System.out.println(ps.endsMeet("babyboomer", 2));
       System.out.println(ps.middleMan("lambo"));
+      System.out.println(ps.isCentered("nu", "nul"));
 
     }
 
@@ -99,7 +100,15 @@ public class ProblemSet5 {
      */
 
     public boolean isCentered(String text, String target) {
-      return true;
+      if (text == null || target == null || (text.length() % 2) == 0 || text.length() < 3 || target.length() != 3) {
+        return false;
+      } else {
+      if ((text.substring(text.length()/2 -1, text.length()/2 +2)).equals(target)) {
+          return true;
+     } else {
+       return false;
+  }
+}
     }
 
     /*
@@ -109,7 +118,7 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
-        return 1;
+      return 1;
     }
 
     /*
