@@ -16,7 +16,12 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
+
+import java.util.Arrays;
+
+
 public class ProblemSet5 {
+
 
 
     public static void main(String[] args) {
@@ -27,6 +32,11 @@ public class ProblemSet5 {
       System.out.println(ps.endsMeet("babyboomer", 2));
       System.out.println(ps.middleMan("lambo"));
       System.out.println(ps.isCentered("nu", "nul"));
+      System.out.println(ps.countMe("I am an example sentence", 'e'));
+      System.out.println(ps.triplets("aaabbbccc"));
+      System.out.println(ps.addMe("123 abc 123"));
+      System.out.println(ps.sequence("aaaaAa   bBbBb"));
+
 
     }
 
@@ -118,7 +128,22 @@ public class ProblemSet5 {
      */
 
     public int countMe(String text, char suffix) {
-      return 1;
+      if (Character.isAlphabetic(suffix) && text != null) {
+        int output = 0;
+        String[] words = text.split(" ");
+        for (int i = 0; i < words.length; i++ ) {
+          if (words[i].endsWith(Character.toString(suffix))) {
+        output ++;
+      }
+    }
+      if (output == 0) {
+      return -1;
+    } else {
+      return output;
+    }
+  } else {
+    return -1;
+  }
     }
 
     /*
@@ -128,8 +153,20 @@ public class ProblemSet5 {
      */
 
     public int triplets(String text) {
-        return 1;
+      if (text != null) {
+        int triplets = 0;
+        for (int i = 1; i < text.length()-1; i++) {
+          char char1 = text.charAt(i-1);
+          char char2 = text.charAt(i);
+          char char3 = text.charAt(i+1);
+          if (char1 == char2 && char1 == char3){
+            triplets += 1;
+          }
+        } return triplets;
+      } else {
+        return -1;
     }
+  }
 
     /*
      * Exercise 7.
@@ -138,7 +175,18 @@ public class ProblemSet5 {
      */
 
     public long addMe(String text) {
-        return 1;
+        if (text != null){
+          int sum = 0;
+          for (int i = 0; i < text.length(); i++){
+            char character = text.charAt(i);
+            if (Character.isDigit(character)) {
+              sum = Character.getNumericValue(character) + sum;
+            }
+          }
+          return sum;
+        } else {
+          return -1;
+        }
     }
 
     /*
@@ -148,7 +196,27 @@ public class ProblemSet5 {
      */
 
     public long sequence(String text) {
-        return 1;
+        if (text != null){
+          int sequence = 1;
+          int longestSequence = 1;
+          char char1 = ' ';
+          char char2 = ' ';
+          for (int i = 0; i < text.length()-1; i++){
+            char1 = text.charAt(i);
+            char2 = text.charAt(i+1);
+            if (char1 == char2){
+              sequence = sequence + 1;
+              if (sequence > longestSequence){
+                longestSequence = sequence;
+              }
+            } else {
+              sequence = 1;
+            }
+          }
+      return longestSequence;
+    } else {
+      return -1;
+    }
     }
 
     /*
@@ -159,7 +227,7 @@ public class ProblemSet5 {
      */
 
     public String intertwine(String a, String b) {
-        return "1";
+       return "1";
     }
 
     /*
