@@ -317,5 +317,19 @@ public class ProblemSet5 {
      */
 
     public boolean isPalindrome(String text) {
+      boolean isPalindrome = false;
+      String reverse = "";
 
+    if (text != null) {
+      for (int i = text.length()-1 ; i >= 0; i--) {
+        reverse += String.valueOf(text.charAt(i));
+      }
+      if (text.equals(reverse)) {
+        isPalindrome = true;
+      }
+      return isPalindrome;
+     } else {
+      return false;
+    }
+  }
 }
