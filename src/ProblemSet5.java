@@ -56,7 +56,6 @@ public class ProblemSet5 {
             System.out.println(ps.isCentered("abcdefg", "cd"));
 
             System.out.println("\nExercise 5");
-            System.out.println(ps.countMe("bruh is there big licks", 's'));
             System.out.println(ps.countMe("I am an example sentence", 'e'));
             System.out.println(ps.countMe(null, 'a'));
             System.out.println(ps.countMe("abc$ def$", '$'));
