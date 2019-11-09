@@ -183,17 +183,17 @@ public class ProblemSet5 {
 
     public int countMe(String text, char suffix) {
       if (Character.isAlphabetic(suffix) && text != null) {
-        int output = 0;
+        int out = 0;
         String[] words = text.split(" ");
         for (int i = 0; i < words.length; i++ ) {
           if (words[i].endsWith(Character.toString(suffix))) {
-        output ++;
+        out ++;
       }
     }
-      if (output == 0) {
+      if (out == 0) {
       return -1;
     } else {
-      return output;
+      return out;
     }
   } else {
     return -1;
@@ -291,21 +291,21 @@ public class ProblemSet5 {
        if (a.length() > b.length()) {
          longestString = a.length();
          longestStringA = true;
-       }else {
+       } else {
          longestString = b.length();
        }
        for (int i = 0;i < longestString; i++) {
          if (i < a.length() && i < b.length()) {
-           intertwined += String.valueOf(a.charAt(i));
-           intertwined += String.valueOf(b.charAt(i));
-         }else if (i < a.length()) {
-           intertwined += String.valueOf(a.charAt(i));
-         }else if (i < b.length()) {
-           intertwined += String.valueOf(b.charAt(i));
+           intertwined = intertwined + String.valueOf(a.charAt(i));
+           intertwined = intertwined + String.valueOf(b.charAt(i));
+         } else if (i < a.length()) {
+           intertwined = intertwined + String.valueOf(a.charAt(i));
+         } else if (i < b.length()) {
+           intertwined = intertwined + String.valueOf(b.charAt(i));
          }
        }
        return intertwined;
-     }else {
+     } else {
        return null;
      }
     }
@@ -322,7 +322,7 @@ public class ProblemSet5 {
 
     if (text != null) {
       for (int i = text.length()-1 ; i >= 0; i--) {
-        reverse += String.valueOf(text.charAt(i));
+        reverse = reverse + String.valueOf(text.charAt(i));
       }
       if (text.equals(reverse)) {
         isPalindrome = true;
